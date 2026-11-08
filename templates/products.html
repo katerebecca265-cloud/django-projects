@@ -1,0 +1,33 @@
+{% extends 'master.html' %}
+{% load static %}
+
+{% block tittle %} Home {% endblock %}
+
+{% block content %}
+<div class="container">
+        <h3>Full name is {{name}}</h3>
+        <p>{{age}} years old</p>
+        <p>{{weight}} kg</p>
+
+        {% for sub in subjects %}
+            <p>{{sub}}</p>
+        {% endfor %}
+
+    {% if isDisabled %}
+        <P>Has disability</P>
+    {% else %}
+        <P>Not disabled</P>
+    {% endif %}
+    </div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <img src="{% static 'images/img_1.jpg' %}" class="img-fluid" alt="">
+        </div>
+        <div class="col-sm-6">
+            <img src="{% static 'images/img_2.jpg' %}" class="img-fluid" alt="">
+        </div>
+    </div>
+</div>
+{% endblock %}
+
